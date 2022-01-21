@@ -15,10 +15,10 @@ import (
 
 func Export(host string, index string, search string, w io.Writer) (int, error) {
 	log.Printf("exporting index %s/%s", host, index)
-	rootURI := fmt.Sprintf("http://%s", host)
+	rootURI := fmt.Sprintf("https://%s", host)
 
 	// Dump mapping first
-	rootIndexURI := fmt.Sprintf("http://%s/%s", host, index)
+	rootIndexURI := fmt.Sprintf("https://%s/%s", host, index)
 	req, err := http.NewRequest("GET", rootIndexURI, nil)
 	if err != nil {
 		return 0, err

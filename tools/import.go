@@ -26,7 +26,7 @@ var (
 
 func Import(host string, index string, workers int, nocreate bool, shards int, replicas int, r io.Reader, totalHint int) (int, error) {
 	log.Printf("importing index %s/%s", host, index)
-	rootURI := fmt.Sprintf("http://%s/%s", host, index)
+	rootURI := fmt.Sprintf("https://%s/%s", host, index)
 	scanner := bufio.NewScanner(r)
 
 	// Create index
