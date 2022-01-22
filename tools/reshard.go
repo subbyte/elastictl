@@ -71,6 +71,7 @@ func Reshard(host string, index string, dir string, keep bool, search string, wo
 func deleteIndex(host, index string) error {
 	indexURI := fmt.Sprintf("https://%s/%s", host, index)
 	req, err := http.NewRequest("DELETE", indexURI, nil)
+    req.Header.Add("Content-Type", "application/json")
 	if err != nil {
 		return err
 	}
